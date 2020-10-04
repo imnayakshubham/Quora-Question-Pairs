@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same Question Pair</title>
+</head>
+<style>
+    .correct{
+        color: green;
+    }
+
+
+    .wrong{
+        color: red;
+    }
+
+</style>
+<body>
+    <center>
+    <div id="head">
+        <h1>Quora Question Predictor</h1>
+    </div>
+    <div id="content">
+
+        <form action="{{url_for('predict')}}" method="post">
+        <textarea name="t1" id="t1c" cols="50" rows="10" placeholder="First Question here"></textarea>
+        
+        <!-- <br> -->
+        
+        <textarea name="t2" id="t2c" cols="50" rows="10" placeholder="Second Question here"></textarea>
+
+            <br>
+        <button id="btn"><h3>Predict</h3></button>
+        <br>
+
+
+
+
+
+        </form>
+    </div>
+    <br>
+    <div id="result">
+
+        {% if result == 1 %}
+
+        <h1 class="correct"> Looks like both are same question..</h1> <br>
+
+        {% elif result == 0 %}
+        <h1 class="wrong">Looks like both are not same question.. </h1>
+
+        {% endif %}
+
+
+
+
+    </div>
+    </center>
+</body>
+</html>
